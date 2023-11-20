@@ -46,7 +46,7 @@ class RoutesPage extends StatelessWidget {
                 name: route.name,
                 startLocation: route.startLocation,
                 endLocation: route.endLocation,
-                time: formattedDateTime, // Get current time
+                time: formattedDateTime,
               );
               Navigator.push(
                 context,

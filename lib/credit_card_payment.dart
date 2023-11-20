@@ -54,7 +54,6 @@ class CreditCardDetailsPage extends StatelessWidget {
               onPressed: () {
                 // TODO
                 // Implement payment processing logic here
-                // You can use the provided orderID to process payment
                 print('Payment processed for Order ID: $orderID');
                 Navigator.pop(
                     context); // Return to previous screen after payment
