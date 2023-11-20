@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'routes.dart';
-import 'login.dart';
+import 'routes.dart'; // Import your RoutesPage file
+import 'login.dart'; // Import your LoginPage file
+import 'cart.dart'; // Import your CartPage file
 
 void main() {
   runApp(MyApp());
@@ -15,11 +16,47 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/routes', // Set the initial route to the login page
+      home: HomePage(), // Set the home page to a custom HomePage widget
       routes: {
         '/login': (context) => LoginPage(),
         '/routes': (context) => RoutesPage(),
+        '/cart': (context) => CartPage(selectedRide: Ride(
+          name: 'Sample Ride',
+          startLocation: 'Sample Start',
+          endLocation: 'Sample End',
+          time: 'Sample Time',
+        )), // Assuming a sample ride is passed to the CartPage for testing
       },
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Select Page for Testing'),
+      ),
+      body: Center(
+        child: DropdownButton<String>(
+          onChanged: (String? route) {
+            if (route != null) {
+              Navigator.pushNamed(context, route);
+            }
+          },
+          items: <String>[
+            '/login',
+            '/routes',
+            '/cart',
+          ].map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(value),
+            );
+          }).toList(),
+        ),
+      ),
     );
   }
 }
