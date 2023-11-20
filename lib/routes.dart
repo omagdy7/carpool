@@ -20,6 +20,10 @@ class RoutesPage extends StatelessWidget {
         startLocation: 'Abassyia',
         endLocation: 'Abdu-Basha Gate-3'),
     Route(
+        name: 'Morning Ride - Abdu-Basha to 5th Settlement',
+        startLocation: 'Abdu-Basha',
+        endLocation: '5th Settlement'),
+    Route(
         name: 'Afternoon Ride - Abdu-Basha to Gate 3',
         startLocation: 'Hadayek Elkoba',
         endLocation: 'Abdu-Basha Gate-6'),
@@ -28,7 +32,7 @@ class RoutesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Routes')),
+      appBar: AppBar(title: const Text('Routes')),
       body: ListView.builder(
         itemCount: dummyRoutes.length,
         itemBuilder: (BuildContext context, int index) {
@@ -53,14 +57,14 @@ class RoutesPage extends StatelessWidget {
             },
             child: Card(
               elevation: 3,
-              margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
               child: ListTile(
                 title: Text(
                   route.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
@@ -70,21 +74,21 @@ class RoutesPage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.location_on, color: Colors.blue),
-                        SizedBox(width: 4),
+                        const Icon(Icons.location_on, color: Colors.blue),
+                        const SizedBox(width: 4),
                         Flexible(child: Text(route.startLocation)),
                       ],
                     ),
                     Row(
                       children: [
-                        Icon(Icons.arrow_forward, color: Colors.blue),
-                        SizedBox(width: 4),
+                        const Icon(Icons.arrow_forward, color: Colors.blue),
+                        const SizedBox(width: 4),
                         Flexible(child: Text(route.endLocation)),
                       ],
                     ),
                   ],
                 ),
-                leading: Icon(Icons.directions_car),
+                leading: const Icon(Icons.directions_car),
               ),
             ),
           );
