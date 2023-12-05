@@ -45,3 +45,9 @@ app.*.map.json
 
 # Firebase
 firebase_options.dart
+ios
+macos
+linux
+web
+windows
+
