@@ -4,7 +4,7 @@
             "outputFile": "com.example.carpool.app-mergeDebugResources-13:/values/values.xml",
             "map": [
                 {
-                    "source": "/home/omar/programming/flutter/carpool/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/omar/programming/flutter/carpool/mobile/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

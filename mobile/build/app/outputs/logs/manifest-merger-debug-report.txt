@@ -1,12 +1,16 @@
 -- Merging decision tree log ---
 application
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml:2:5-32:19
-MERGED from [:firebase_auth] /home/omar/programming/flutter/carpool/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_auth] /home/omar/programming/flutter/carpool/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml:2:5-32:19
+MERGED from [:firebase_auth] /home/omar/programming/flutter/carpool/mobile/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_auth] /home/omar/programming/flutter/carpool/mobile/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
+MERGED from [:cloud_firestore] /home/omar/programming/flutter/carpool/mobile/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
+MERGED from [:cloud_firestore] /home/omar/programming/flutter/carpool/mobile/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/mobile/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/mobile/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:13:5-24:19
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/omar/.gradle/caches/transforms-3/5cf447b53140afab14b56a97eba55473/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/omar/.gradle/caches/transforms-3/5cf447b53140afab14b56a97eba55473/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/omar/.gradle/caches/transforms-3/fdb1b8c17bb475421c49bf182ad95b6f/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
@@ -32,17 +36,19 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/omar/
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] /home/omar/.gradle/caches/transforms-3/cfb1b99aff7ad9cf4c1b8532c6075063/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
 	android:name
-		INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml
 manifest
-ADDED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml:1:1-33:12
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml:1:1-33:12
-MERGED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml:1:1-33:12
-MERGED from [:firebase_auth] /home/omar/programming/flutter/carpool/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
-MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
-MERGED from [:fluttertoast] /home/omar/programming/flutter/carpool/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+ADDED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from [:firebase_auth] /home/omar/programming/flutter/carpool/mobile/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
+MERGED from [:cloud_firestore] /home/omar/programming/flutter/carpool/mobile/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
+MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/mobile/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
+MERGED from [:fluttertoast] /home/omar/programming/flutter/carpool/mobile/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:17:1-75:12
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/omar/.gradle/caches/transforms-3/5cf447b53140afab14b56a97eba55473/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:2:1-18:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/omar/.gradle/caches/transforms-3/fdb1b8c17bb475421c49bf182ad95b6f/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-common:20.4.2] /home/omar/.gradle/caches/transforms-3/b29de336eedfa9390b65176ca920839a/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:15:1-41:12
@@ -52,6 +58,7 @@ MERGED from [androidx.window:window:1.0.0-beta04] /home/omar/.gradle/caches/tran
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /home/omar/.gradle/caches/transforms-3/bb9a24031d91b1b874efde9029464bef/transformed/jetified-play-services-auth-api-phone-17.4.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.play:integrity:1.1.0] /home/omar/.gradle/caches/transforms-3/a49f94aa81334320810681dd3742f5b3/transformed/jetified-integrity-1.1.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/omar/.gradle/caches/transforms-3/ba35f6dc1ae205896e6b0916fa1afd6b/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:15:1-25:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /home/omar/.gradle/caches/transforms-3/6868b23baf79a83556c274a872a403b2/transformed/jetified-firebase-database-collection-18.0.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /home/omar/.gradle/caches/transforms-3/f46872f19fc48f4d97e8ffc9ee9d6807/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/omar/.gradle/caches/transforms-3/08e354e7608ad0103c86847717045012/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/omar/.gradle/caches/transforms-3/98537e5ec70bbb9b95a3c4905239e936/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:16:1-26:12
@@ -73,36 +80,42 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/omar/.gradle/caches/tr
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/omar/.gradle/caches/transforms-3/1bffb7afb193e8c101b312495473f0c9/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/omar/.gradle/caches/transforms-3/85cea0b5432a3bcfefa99e10db2de4ae/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/omar/.gradle/caches/transforms-3/f5b397d4be729b9c8a14e6bc755ca052/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [io.grpc:grpc-android:1.52.1] /home/omar/.gradle/caches/transforms-3/825df1e7c4b9a14f11ee41442d7e74c1/transformed/jetified-grpc-android-1.52.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /home/omar/.gradle/caches/transforms-3/7c683fb81f1299f97593f8981a39f57c/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/omar/.gradle/caches/transforms-3/33edf3ee0517c86776bd6cb7682045f3/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 	package
-		INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml:1:1-33:12
-		INJECTED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml:1:1-33:12
+		INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml:1:1-33:12
-		INJECTED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml:1:1-33:12
+		INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml:1:1-33:12
-		INJECTED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml:1:1-33:12
+		INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-sdk
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml
-MERGED from [:firebase_auth] /home/omar/programming/flutter/carpool/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_auth] /home/omar/programming/flutter/carpool/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:fluttertoast] /home/omar/programming/flutter/carpool/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:fluttertoast] /home/omar/programming/flutter/carpool/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml
+MERGED from [:firebase_auth] /home/omar/programming/flutter/carpool/mobile/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_auth] /home/omar/programming/flutter/carpool/mobile/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:cloud_firestore] /home/omar/programming/flutter/carpool/mobile/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:cloud_firestore] /home/omar/programming/flutter/carpool/mobile/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/mobile/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/mobile/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] /home/omar/programming/flutter/carpool/mobile/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] /home/omar/programming/flutter/carpool/mobile/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:21:5-23:64
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:21:5-23:64
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:6:5-44
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/omar/.gradle/caches/transforms-3/5cf447b53140afab14b56a97eba55473/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/omar/.gradle/caches/transforms-3/5cf447b53140afab14b56a97eba55473/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /home/omar/.gradle/caches/transforms-3/fdb1b8c17bb475421c49bf182ad95b6f/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
@@ -121,6 +134,8 @@ MERGED from [com.google.android.play:integrity:1.1.0] /home/omar/.gradle/caches/
 MERGED from [com.google.android.play:integrity:1.1.0] /home/omar/.gradle/caches/transforms-3/a49f94aa81334320810681dd3742f5b3/transformed/jetified-integrity-1.1.0/AndroidManifest.xml:4:5-44
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/omar/.gradle/caches/transforms-3/ba35f6dc1ae205896e6b0916fa1afd6b/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /home/omar/.gradle/caches/transforms-3/ba35f6dc1ae205896e6b0916fa1afd6b/transformed/jetified-firebase-appcheck-interop-17.0.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /home/omar/.gradle/caches/transforms-3/6868b23baf79a83556c274a872a403b2/transformed/jetified-firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /home/omar/.gradle/caches/transforms-3/6868b23baf79a83556c274a872a403b2/transformed/jetified-firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /home/omar/.gradle/caches/transforms-3/f46872f19fc48f4d97e8ffc9ee9d6807/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /home/omar/.gradle/caches/transforms-3/f46872f19fc48f4d97e8ffc9ee9d6807/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/omar/.gradle/caches/transforms-3/08e354e7608ad0103c86847717045012/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
@@ -163,32 +178,42 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /home/omar/.gradle/caches
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/omar/.gradle/caches/transforms-3/85cea0b5432a3bcfefa99e10db2de4ae/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/omar/.gradle/caches/transforms-3/f5b397d4be729b9c8a14e6bc755ca052/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/omar/.gradle/caches/transforms-3/f5b397d4be729b9c8a14e6bc755ca052/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [io.grpc:grpc-android:1.52.1] /home/omar/.gradle/caches/transforms-3/825df1e7c4b9a14f11ee41442d7e74c1/transformed/jetified-grpc-android-1.52.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.grpc:grpc-android:1.52.1] /home/omar/.gradle/caches/transforms-3/825df1e7c4b9a14f11ee41442d7e74c1/transformed/jetified-grpc-android-1.52.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /home/omar/.gradle/caches/transforms-3/7c683fb81f1299f97593f8981a39f57c/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /home/omar/.gradle/caches/transforms-3/7c683fb81f1299f97593f8981a39f57c/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/omar/.gradle/caches/transforms-3/33edf3ee0517c86776bd6cb7682045f3/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/omar/.gradle/caches/transforms-3/33edf3ee0517c86776bd6cb7682045f3/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml
-INJECTED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:23:9-61
 	android:targetSdkVersion
-		INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/omar/programming/flutter/carpool/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml:6:5-66
+ADDED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml:6:5-66
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /home/omar/.gradle/caches/transforms-3/2699a75a44ad4f5c1a6784ee39ed47cd/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:7:5-67
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /home/omar/.gradle/caches/transforms-3/2699a75a44ad4f5c1a6784ee39ed47cd/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:7:5-67
 	android:name
-		ADDED from /home/omar/programming/flutter/carpool/android/app/src/debug/AndroidManifest.xml:6:22-64
+		ADDED from /home/omar/programming/flutter/carpool/mobile/android/app/src/debug/AndroidManifest.xml:6:22-64
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [:firebase_auth] /home/omar/programming/flutter/carpool/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+ADDED from [:firebase_auth] /home/omar/programming/flutter/carpool/mobile/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+MERGED from [:cloud_firestore] /home/omar/programming/flutter/carpool/mobile/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+MERGED from [:cloud_firestore] /home/omar/programming/flutter/carpool/mobile/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/mobile/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] /home/omar/programming/flutter/carpool/mobile/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:66:9-72:19
 MERGED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:66:9-72:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:14:9-23:19
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/omar/.gradle/caches/transforms-3/5cf447b53140afab14b56a97eba55473/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:9:9-15:19
 MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/omar/.gradle/caches/transforms-3/5cf447b53140afab14b56a97eba55473/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:9:9-15:19
 MERGED from [com.google.firebase:firebase-common:20.4.2] /home/omar/.gradle/caches/transforms-3/b29de336eedfa9390b65176ca920839a/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:30:9-38:19
@@ -200,23 +225,33 @@ MERGED from [com.google.firebase:firebase-common:20.4.2] /home/omar/.gradle/cach
 	android:directBootAware
 		ADDED from [com.google.firebase:firebase-common:20.4.2] /home/omar/.gradle/caches/transforms-3/b29de336eedfa9390b65176ca920839a/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:32:13-43
 	android:name
-		ADDED from [:firebase_auth] /home/omar/programming/flutter/carpool/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:10:18-89
+		ADDED from [:firebase_auth] /home/omar/programming/flutter/carpool/mobile/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:10:18-89
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
-ADDED from [:firebase_auth] /home/omar/programming/flutter/carpool/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+ADDED from [:firebase_auth] /home/omar/programming/flutter/carpool/mobile/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:firebase_auth] /home/omar/programming/flutter/carpool/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+		ADDED from [:firebase_auth] /home/omar/programming/flutter/carpool/mobile/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:firebase_auth] /home/omar/programming/flutter/carpool/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+		ADDED from [:firebase_auth] /home/omar/programming/flutter/carpool/mobile/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
+ADDED from [:cloud_firestore] /home/omar/programming/flutter/carpool/mobile/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [:cloud_firestore] /home/omar/programming/flutter/carpool/mobile/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [:cloud_firestore] /home/omar/programming/flutter/carpool/mobile/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-134
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
-ADDED from [:firebase_core] /home/omar/programming/flutter/carpool/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+ADDED from [:firebase_core] /home/omar/programming/flutter/carpool/mobile/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:firebase_core] /home/omar/programming/flutter/carpool/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+		ADDED from [:firebase_core] /home/omar/programming/flutter/carpool/mobile/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:firebase_core] /home/omar/programming/flutter/carpool/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+		ADDED from [:firebase_core] /home/omar/programming/flutter/carpool/mobile/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:10:5-79
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /home/omar/.gradle/caches/transforms-3/2699a75a44ad4f5c1a6784ee39ed47cd/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:8:5-79
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /home/omar/.gradle/caches/transforms-3/2699a75a44ad4f5c1a6784ee39ed47cd/transformed/jetified-recaptcha-18.1.2/AndroidManifest.xml:8:5-79
+MERGED from [io.grpc:grpc-android:1.52.1] /home/omar/.gradle/caches/transforms-3/825df1e7c4b9a14f11ee41442d7e74c1/transformed/jetified-grpc-android-1.52.1/AndroidManifest.xml:9:5-79
+MERGED from [io.grpc:grpc-android:1.52.1] /home/omar/.gradle/caches/transforms-3/825df1e7c4b9a14f11ee41442d7e74c1/transformed/jetified-grpc-android-1.52.1/AndroidManifest.xml:9:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:26:22-76
 activity#com.google.firebase.auth.internal.GenericIdpActivity
@@ -273,6 +308,18 @@ ADDED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/
 		ADDED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:71:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:22.3.0] /home/omar/.gradle/caches/transforms-3/59c3375fd9e11c827922abb91b461128/transformed/jetified-firebase-auth-22.3.0/AndroidManifest.xml:70:17-109
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar
+ADDED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:17:13-19:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:19:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:18:17-122
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:24.9.1] /home/omar/.gradle/caches/transforms-3/910a81ef385205073c71d48faa4eb2ef/transformed/jetified-firebase-firestore-24.9.1/AndroidManifest.xml:21:17-111
 meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
 ADDED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/omar/.gradle/caches/transforms-3/5cf447b53140afab14b56a97eba55473/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
 	android:value

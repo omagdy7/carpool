@@ -81,9 +81,9 @@ class CartPage extends StatelessWidget {
                   onPressed: () {
                     // Implement payment or confirmation logic here
                     // For now, just print a message
-                    print('Processing payment/confirmation...');
+                    print('Processing Requesting Ride');
                   },
-                  child: const Text('Proceed to Payment/Confirm'),
+                  child: const Text('Request Ride'),
                 ),
               ],
             ),

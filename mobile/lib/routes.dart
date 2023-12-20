@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'cart.dart';
 import 'package:intl/intl.dart';
+
+// Accessing Firestore instance
+final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
 class Route {
   final String name;
@@ -13,30 +17,60 @@ class Route {
       required this.endLocation});
 }
 
-class RoutesPage extends StatelessWidget {
-  final List<Route> dummyRoutes = [
-    Route(
-        name: 'Morning Ride - Gate 3 to Abdu-Basha',
-        startLocation: 'Abassyia',
-        endLocation: 'Abdu-Basha Gate-3'),
-    Route(
-        name: 'Morning Ride - Abdu-Basha to 5th Settlement',
-        startLocation: 'Abdu-Basha',
-        endLocation: '5th Settlement'),
-    Route(
-        name: 'Afternoon Ride - Abdu-Basha to Gate 3',
-        startLocation: 'Hadayek Elkoba',
-        endLocation: 'Abdu-Basha Gate-6'),
-  ];
+Future<List<Route>> getDataFromFirestore() async {
+  List<Route> routes = [];
+  try {
+    // Accessing a specific collection ('users' in this case)
+    QuerySnapshot querySnapshot = await firestore.collection('Rides').get();
+
+    // Loop through the documents in the collection
+    querySnapshot.docs.forEach((doc) {
+      String name = doc['driverName'];
+      // String carModel = doc['carModel'];
+      // String carColor = doc['carColor'];
+      // String plateNumber = doc['plateNumber'];
+      // String status = doc['status'];
+      // DateTime orderTime = doc['orderTime'];
+      String fromLocation = doc['fromLocation'];
+      String toLocation = doc['toLocation'];
+      routes.add(Route(
+          name: name, startLocation: fromLocation, endLocation: toLocation));
+    });
+  } catch (e) {
+    print('Error retrieving data: $e');
+  }
+  return routes;
+}
+
+class RoutesPage extends StatefulWidget {
+  @override
+  _RoutesPageState createState() => _RoutesPageState();
+}
+
+class _RoutesPageState extends State<RoutesPage> {
+  List<Route> routes = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchRoutesFromFirestore();
+  }
+
+  Future<void> fetchRoutesFromFirestore() async {
+    List<Route> fetchedRoutes = await getDataFromFirestore();
+    setState(() {
+      routes = fetchedRoutes;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Routes')),
       body: ListView.builder(
-        itemCount: dummyRoutes.length,
+        itemCount: routes.length,
         itemBuilder: (BuildContext context, int index) {
-          final Route route = dummyRoutes[index];
+          final Route route = routes[index];
           return GestureDetector(
             onTap: () {
               DateTime now = DateTime.now();

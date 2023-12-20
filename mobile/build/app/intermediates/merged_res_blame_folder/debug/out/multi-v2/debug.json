@@ -3708,7 +3708,7 @@
             "outputFile": "com.example.carpool.app-merged_res-15:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "/home/omar/programming/flutter/carpool/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/omar/programming/flutter/carpool/mobile/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -4170,7 +4170,7 @@
             "outputFile": "com.example.carpool.app-merged_res-15:/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/home/omar/programming/flutter/carpool/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/omar/programming/flutter/carpool/mobile/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
