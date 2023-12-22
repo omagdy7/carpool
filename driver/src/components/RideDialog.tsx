@@ -23,7 +23,7 @@ function RideDialog({ name, brand, model, color, plateNumber, phoneNumber }: any
   const [orderTime, _setOrderTime] = useState<Date>(new Date())
   const [pickUpLocation, setPickUpLocation] = useState<string>()
   const [dropOffLocation, setDropOffLocation] = useState<string>()
-  const [isRideAdded, setIsRideAdded] = useState(true)
+  const [isRideAdded, setIsRideAdded] = useState(false)
   const [cost, setCost] = useState('')
 
 
@@ -113,13 +113,12 @@ function RideDialog({ name, brand, model, color, plateNumber, phoneNumber }: any
           <DialogFooter>
             <Button className="bg-green-500 text-black" type="submit" onClick={() => {
               if (isRideAdded) {
-                console.log("Hello")
                 toast({
                   title: "Cannot add another ride",
                   description: "You already have a ride in place",
                 })
               } else {
-                addRideOrderToFirestore
+                addRideOrderToFirestore()
                 toast({
                   description: "Ride was added successfully",
                 })

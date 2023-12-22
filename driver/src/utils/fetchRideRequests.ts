@@ -5,7 +5,6 @@ import { fetchUserDetails } from "./fetchUserDetails";
 
 export const fetchRideRequests = async () => {
   const user = auth.currentUser;
-  console.log(user)
   try {
     let data: any[] = []
     if (user) {
@@ -14,7 +13,6 @@ export const fetchRideRequests = async () => {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc: DocumentData) => {
         data.push(doc.data())
-        console.log(doc.id, " => ", doc.data());
       });
       const rideReqs = data?.map(async (rideReq) => {
         const passengerData: any = await fetchUserDetails(rideReq.passengerID);

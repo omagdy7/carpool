@@ -9,6 +9,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { useEffect, useState } from "react"
 import { Navigate } from "react-router-dom"
 import { fetchRideRequests } from "@/utils/fetchRideRequests"
+import { collection, onSnapshot } from "firebase/firestore"
 
 interface IDriver {
   uid: string,
@@ -93,12 +94,19 @@ export default function Home() {
     async function fetchData() {
       const data: IDriver | null | undefined = await fetchUserDetails(user?.uid);
       const rideReqs = await fetchRideRequests()
-      console.log("RideRequests:", rideReqs)
       setDriverData(data)
       setRideRequests(rideReqs)
-      console.log("Length: ", rideRequests?.length)
     }
     fetchData()
+    // Firestore real-time listener for changes
+    const unsubscribe = onSnapshot(collection(db, "RideRequest"), () => {
+      // Call fetchData when changes occur in the specified collection
+      fetchData();
+    });
+
+    return () => {
+      unsubscribe()
+    }
   }, [auth.currentUser, db]);
 
   return (
@@ -117,7 +125,6 @@ export default function Home() {
             <div className="flex gap-4 items-center">
               <Button onClick={
                 () => {
-                  console.log("Loging out")
                   setIsLoggedIn(false)
                   auth.signOut()
                 }

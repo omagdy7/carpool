@@ -12,7 +12,6 @@ export const fetchUserDetails = async (uid) => {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc: DocumentData) => {
         data = doc.data()
-        console.log(doc.id, " => ", doc.data());
       });
       return data;
     } else {

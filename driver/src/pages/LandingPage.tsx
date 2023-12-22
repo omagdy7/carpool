@@ -4,9 +4,6 @@ import { Navigate, redirect } from "react-router-dom";
 import { Badge } from "@/components/ui/badge"
 
 export default function LandingPage() {
-  if (true) {
-    return <Navigate to="/signup" />
-  }
   return (
     <main key="1" className="bg-black min-h-screen px-4 py-8 md:px-16 lg:px-24">
       <header className="flex justify-between items-center mb-8">
