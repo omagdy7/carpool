@@ -28,46 +28,65 @@ interface IPassengerRequest {
   dropOff: string,
 }
 
-interface ITrip {
-  pickUp: string,
-  dropOff: string,
-}
-
-function PassengerRequestCard({ passengerName, pickUp, dropOff, status, phoneNumber }: IPassengerRequest) {
-  return (
-    <li className="py-2">
-      <p>
-        <strong>Passenger:</strong> {passengerName}
-      </p>
-      <p>
-        <strong>Phone number:</strong> {phoneNumber}
-      </p>
-      <p>
-        <strong>Status:</strong> {status}
-      </p>
-      <p>
-        <strong>Pickup:</strong> {pickUp}
-      </p>
-      <p>
-        <strong>Dropoff:</strong> {dropOff}
-      </p>
-      <div className="flex justify-between mt-2">
-        <Button className="text-green-500 border-green-500" variant="outline">
-          Accept
-        </Button>
-        <Button className="border-red-500 text-red-500" variant="outline">
-          Reject
-        </Button>
-      </div>
-    </li>
-  )
-
-}
 
 export default function Home() {
   const [driverData, setDriverData] = useState<IDriver | null | undefined>()
-  const [rideRequests, setRideRequests] = useState<any[] | undefined>([])
-  const [currentTrip, setCurrentTrip] = useState<ITrip>()
+  const [rideRequests, setRideRequests] = useState<IPassengerRequest[]>([])
+  const [currentTrip, setCurrentTrip] = useState<IPassengerRequest>()
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
+
+
+  function PassengerRequestCard({ passengerName, pickUp, dropOff, status, phoneNumber }: IPassengerRequest) {
+    return (
+      <li className="py-2">
+        <p>
+          <strong>Passenger:</strong> {passengerName}
+        </p>
+        <p>
+          <strong>Phone Number:</strong> {phoneNumber}
+        </p>
+        <p>
+          <strong>Status:</strong> {status}
+        </p>
+        <p>
+          <strong>Pickup:</strong> {pickUp}
+        </p>
+        <p>
+          <strong>Dropoff:</strong> {dropOff}
+        </p>
+        <div className="flex justify-between mt-2">
+          <Button onClick={
+            () => {
+              const newRideReqs = rideRequests.map((request) => {
+                if (request.phoneNumber === phoneNumber) {
+                  return { ...request, status: 'Accepted' };
+                }
+                return request;
+              })
+              const curTrip = newRideReqs.find((req) => req.phoneNumber == phoneNumber)
+              setCurrentTrip(curTrip)
+              setRideRequests(newRideReqs)
+            }
+          }
+            className="text-green-500 border-green-500" variant="outline">
+            Accept
+          </Button>
+          <Button onClick={() => {
+            const newRideReqs = rideRequests.map((request) => {
+              if (request.phoneNumber === phoneNumber) {
+                return { ...request, status: 'Cancelled' };
+              }
+              return request;
+            })
+            setRideRequests(newRideReqs)
+          }} className="border-red-500 text-red-500" variant="outline">
+            Reject
+          </Button>
+        </div>
+      </li>
+    )
+
+  }
 
   useEffect(() => {
     const user = auth.currentUser;
@@ -83,7 +102,7 @@ export default function Home() {
   }, [auth.currentUser, db]);
 
   return (
-    !auth.currentUser ? <Navigate to="/login" /> :
+    !isLoggedIn ? <Navigate to="/login" /> :
       (
         <main className="flex flex-col gap-6 p-6 bg-gray-900 text-white min-h-screen">
           <header className="flex justify-between items-center">
@@ -96,7 +115,14 @@ export default function Home() {
               </Badge>
             </div>
             <div className="flex gap-4 items-center">
-              <Button className="text-black bg-white" variant="outline">
+              <Button onClick={
+                () => {
+                  console.log("Loging out")
+                  setIsLoggedIn(false)
+                  auth.signOut()
+                }
+              }
+                className="text-black bg-white" variant="outline">
                 Log Out
               </Button>
             </div>
@@ -126,6 +152,15 @@ export default function Home() {
               </CardHeader>
               <CardContent className="mt-5">
                 <p>
+                  <strong>Passenger:</strong> {currentTrip?.passengerName}
+                </p>
+                <p>
+                  <strong>Phone Number:</strong> {currentTrip?.phoneNumber}
+                </p>
+                <p>
+                  <strong>Status:</strong> {currentTrip?.status}
+                </p>
+                <p>
                   <strong>Pickup:</strong> {currentTrip?.pickUp}
                 </p>
                 <p>
@@ -148,17 +183,18 @@ export default function Home() {
               </CardHeader>
               <CardContent className="mt-3">
                 <ul className="divide-y divide-gray-600">
-                  {rideRequests?.map((rideReq) => {
-                    return (
-                      < PassengerRequestCard
-                        passengerName={rideReq?.name}
-                        pickUp={rideReq?.pickUp}
-                        dropOff={rideReq?.dropOff}
-                        phoneNumber={rideReq?.phoneNumber}
-                        status={rideReq?.status}
-                      />
-                    )
-                  })}
+                  {rideRequests?.filter((rideReq) => rideReq?.status == "Pending")
+                    .map((rideReq) => {
+                      return (
+                        < PassengerRequestCard
+                          passengerName={rideReq?.passengerName}
+                          pickUp={rideReq?.pickUp}
+                          dropOff={rideReq?.dropOff}
+                          phoneNumber={rideReq?.phoneNumber}
+                          status={rideReq?.status}
+                        />
+                      )
+                    })}
                 </ul>
               </CardContent>
             </Card>

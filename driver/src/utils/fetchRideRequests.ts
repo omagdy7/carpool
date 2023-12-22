@@ -19,7 +19,7 @@ export const fetchRideRequests = async () => {
       const rideReqs = data?.map(async (rideReq) => {
         const passengerData: any = await fetchUserDetails(rideReq.passengerID);
         return {
-          name: passengerData?.name,
+          passengerName: passengerData?.name,
           phoneNumber: passengerData?.phoneNumber,
           status: rideReq.status,
           pickUp: rideReq.pickUp,
