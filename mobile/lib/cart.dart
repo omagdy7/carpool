@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 // Define a Ride class to represent the selected ride
@@ -5,13 +7,23 @@ class Ride {
   final String name;
   final String startLocation;
   final String endLocation;
-  final String time;
+  final String carBrand;
+  final String carModel;
+  final String carColor;
+  final String plateNumber;
+  final String status;
+  final DateTime orderTime;
 
   Ride({
     required this.name,
     required this.startLocation,
     required this.endLocation,
-    required this.time,
+    required this.carBrand,
+    required this.carModel,
+    required this.carColor,
+    required this.plateNumber,
+    required this.status,
+    required this.orderTime,
   });
 }
 
@@ -70,7 +82,7 @@ class CartPage extends StatelessWidget {
                         children: [
                           const Icon(Icons.access_time, color: Colors.blue),
                           const SizedBox(width: 4),
-                          Text(selectedRide.time),
+                          // Text(selectedRide.orderTime.toString()),
                         ],
                       ),
                     ],
@@ -78,9 +90,31 @@ class CartPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {
-                    // Implement payment or confirmation logic here
-                    // For now, just print a message
+                  onPressed: () async {
+                    FirebaseFirestore firestore = FirebaseFirestore.instance;
+                    User? user = FirebaseAuth.instance.currentUser;
+
+                    if (user != null) {
+                      String userId = user.uid;
+                      CollectionReference collection =
+                          firestore.collection('RideRequest');
+
+                      Map<String, dynamic> data = {
+                        'dropOff': selectedRide.endLocation,
+                        'pickUp': selectedRide.startLocation,
+                        'status': "Pending",
+                        'cost': "50",
+                        'passengerID': userId,
+                      };
+
+                      try {
+                        await collection.add(data);
+                        print('Document added successfully!');
+                      } catch (e) {
+                        print('Error adding document: $e');
+                      }
+                    }
+
                     print('Processing Requesting Ride');
                   },
                   child: const Text('Request Ride'),

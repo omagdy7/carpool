@@ -25,66 +25,12 @@ class OrderHistoryPage extends StatelessWidget {
   final List<RideOrder> orders = [
     RideOrder(
       orderID: '001',
-      driverName: 'John Doe',
+      driverName: 'Omar Magdy',
       carModel: 'Toyota Corolla',
       carColor: Colors.black,
       plateNumber: 'ABC-123',
       status: 'Completed',
-      orderTime: DateTime.now().subtract(const Duration(days: 5)),
-    ),
-    RideOrder(
-      orderID: '002',
-      driverName: 'Alice Smith',
-      carModel: 'Honda Civic',
-      carColor: Colors.blue,
-      plateNumber: 'XYZ-789',
-      status: 'Cancelled',
-      orderTime: DateTime.now().subtract(const Duration(days: 2)),
-    ),
-    RideOrder(
-      orderID: '004',
-      driverName: 'Emily Johnson',
-      carModel: 'Chevrolet Malibu',
-      carColor: Colors.green,
-      plateNumber: 'GHI-789',
-      status: 'Completed',
-      orderTime: DateTime.now().subtract(const Duration(days: 7)),
-    ),
-    RideOrder(
-      orderID: '005',
-      driverName: 'David Wilson',
-      carModel: 'Tesla Model 3',
-      carColor: Colors.grey,
-      plateNumber: 'JKL-012',
-      status: 'Pending',
-      orderTime: DateTime.now().subtract(const Duration(days: 2)),
-    ),
-    RideOrder(
-      orderID: '006',
-      driverName: 'Sophia Brown',
-      carModel: 'BMW X5',
-      carColor: Colors.black,
-      plateNumber: 'MNO-345',
-      status: 'Cancelled',
-      orderTime: DateTime.now().subtract(const Duration(days: 4)),
-    ),
-    RideOrder(
-      orderID: '007',
-      driverName: 'James Davis',
-      carModel: 'Audi A4',
-      carColor: Colors.blueGrey,
-      plateNumber: 'PQR-678',
-      status: 'pending',
-      orderTime: DateTime.now().subtract(const Duration(days: 6)),
-    ),
-    RideOrder(
-      orderID: '008',
-      driverName: 'Olivia Martinez',
-      carModel: 'Hyundai Elantra',
-      carColor: Colors.orange,
-      plateNumber: 'STU-901',
-      status: 'Completed',
-      orderTime: DateTime.now().subtract(const Duration(days: 9)),
+      orderTime: DateTime.now(),
     ),
   ];
 
@@ -96,7 +42,6 @@ class OrderHistoryPage extends StatelessWidget {
         return Colors.orange;
       case 'cancelled':
         return Colors.red;
-      // Add more cases for other statuses
       default:
         return Colors.grey;
     }

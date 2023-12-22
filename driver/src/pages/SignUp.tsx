@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { useState, useEffect } from 'react';
 import { auth, db } from '../firebase/firebase_config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { Navigate, redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 
 const SignUp = () => {
@@ -43,7 +43,6 @@ const SignUp = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const usersCollection = collection(db, 'users');
       const userUid = userCredential.user.uid; // Get the user's UID
-      console.log(userUid, name, phoneNumber, carBrand, carModel, carColor, plateNumber)
       addDoc(usersCollection, {
         uid: userUid,
         name: name,

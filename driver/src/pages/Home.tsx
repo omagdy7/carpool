@@ -10,6 +10,9 @@ import { useEffect, useState } from "react"
 import { Navigate } from "react-router-dom"
 import { fetchRideRequests } from "@/utils/fetchRideRequests"
 import { collection, onSnapshot } from "firebase/firestore"
+import { toast } from "@/components/ui/use-toast"
+import { updateStatus } from "@/utils/updateStatus"
+import { fetchUserIdByPhoneNumber } from "@/utils/fetchUserIdByPhoneNumber"
 
 interface IDriver {
   uid: string,
@@ -33,7 +36,8 @@ interface IPassengerRequest {
 export default function Home() {
   const [driverData, setDriverData] = useState<IDriver | null | undefined>()
   const [rideRequests, setRideRequests] = useState<IPassengerRequest[]>([])
-  const [currentTrip, setCurrentTrip] = useState<IPassengerRequest>()
+  const [currentTrip, setCurrentTrip] = useState<IPassengerRequest | null>(null)
+  const [toComplete, setToComplete] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(true)
 
 
@@ -57,30 +61,45 @@ export default function Home() {
         </p>
         <div className="flex justify-between mt-2">
           <Button onClick={
-            () => {
-              const newRideReqs = rideRequests.map((request) => {
-                if (request.phoneNumber === phoneNumber) {
-                  return { ...request, status: 'Accepted' };
+            async () => {
+              if (currentTrip) {
+                toast({
+                  description: "You already have a trip consider canceling the trip to accept a new one"
+                })
+              } else {
+                const newRideReqs = rideRequests.map((request) => {
+                  if (request.phoneNumber === phoneNumber) {
+                    return { ...request, status: 'Accepted' };
+                  }
+                  return request;
+                })
+                const curTrip: any = newRideReqs.find((req) => req.phoneNumber == phoneNumber)
+                const userId = await fetchUserIdByPhoneNumber(phoneNumber)
+                if (userId) {
+                  await updateStatus(userId, "Accepted")
                 }
-                return request;
-              })
-              const curTrip = newRideReqs.find((req) => req.phoneNumber == phoneNumber)
-              setCurrentTrip(curTrip)
-              setRideRequests(newRideReqs)
+                setCurrentTrip(curTrip)
+                setRideRequests((_) => [...newRideReqs])
+              }
             }
           }
             className="text-green-500 border-green-500" variant="outline">
             Accept
           </Button>
-          <Button onClick={() => {
-            const newRideReqs = rideRequests.map((request) => {
-              if (request.phoneNumber === phoneNumber) {
-                return { ...request, status: 'Cancelled' };
+          <Button onClick={
+            async () => {
+              const newRideReqs = rideRequests.map((request) => {
+                if (request.phoneNumber === phoneNumber) {
+                  return { ...request, status: 'Cancelled' };
+                }
+                return request;
+              })
+              const userId = await fetchUserIdByPhoneNumber(phoneNumber)
+              if (userId) {
+                await updateStatus(userId, "Rejected")
               }
-              return request;
-            })
-            setRideRequests(newRideReqs)
-          }} className="border-red-500 text-red-500" variant="outline">
+              setRideRequests(() => newRideReqs)
+            }} className="border-red-500 text-red-500" variant="outline">
             Reject
           </Button>
         </div>
@@ -90,10 +109,37 @@ export default function Home() {
   }
 
   useEffect(() => {
+    const doWork = async () => {
+      if (toComplete) {
+        let phoneNumber = ''
+        const newRideReqs = rideRequests.map((request) => {
+          if (request.status === "Accepted") {
+            phoneNumber = request.phoneNumber;
+            return { ...request, status: 'Completed' };
+          }
+          return request;
+        })
+        const userId = await fetchUserIdByPhoneNumber(phoneNumber)
+        if (userId) {
+          await updateStatus(userId, "Completed")
+        }
+        setRideRequests(newRideReqs)
+        setCurrentTrip(null)
+      }
+    }
+    doWork()
+
+    return () => {
+      doWork()
+    }
+
+  }, [toComplete])
+
+  useEffect(() => {
     const user = auth.currentUser;
     async function fetchData() {
       const data: IDriver | null | undefined = await fetchUserDetails(user?.uid);
-      const rideReqs = await fetchRideRequests()
+      const rideReqs: any = await fetchRideRequests()
       setDriverData(data)
       setRideRequests(rideReqs)
     }
@@ -173,13 +219,25 @@ export default function Home() {
                 <p>
                   <strong>Dropoff:</strong> {currentTrip?.dropOff}
                 </p>
-                <Button className="w-full mt-4 border-blue-500 text-white" variant="outline">
-                  Start Trip
-                </Button>
-                <Button className="w-full mt-4 border-green-500 text-white" variant="outline">
+                <Button
+                  onClick={() => {
+                    setToComplete(true);
+                  }}
+                  className="w-full mt-4 border-green-500 text-white" variant="outline">
                   Finish Trip
                 </Button>
-                <Button className="w-full mt-4 border-red-500 text-white" variant="outline">
+                <Button
+                  onClick={() => {
+                    const newRideReqs = rideRequests.map((request) => {
+                      if (request.status === "Accepted") {
+                        return { ...request, status: 'Pending' };
+                      }
+                      return request;
+                    })
+                    setRideRequests(newRideReqs)
+                    setCurrentTrip(null)
+                  }}
+                  className="w-full mt-4 border-red-500 text-white" variant="outline">
                   Cancel Trip
                 </Button>
               </CardContent>

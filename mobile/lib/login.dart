@@ -1,3 +1,4 @@
+import 'package:carpool/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -23,6 +24,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('Login')),
+      drawer: CustomDrawer(),
       backgroundColor: Colors.grey[300],
       body: Form(
         key: _formKey,
@@ -118,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                                   password: _controllerPassword.text.trim())
                               .then((value) =>
                                   Navigator.pushNamedAndRemoveUntil(
-                                      context, '/', (route) => false));
+                                      context, '/routes', (route) => false));
                         } on FirebaseAuthException catch (e) {
                           Fluttertoast.showToast(
                               msg: e.message.toString(),
@@ -155,6 +158,7 @@ class _LoginPageState extends State<LoginPage> {
   void dispose() {
     _focusNodePassword.dispose();
     _controllerUsername.dispose();
+    _controllerPassword.dispose();
     _controllerPassword.dispose();
     super.dispose();
   }
