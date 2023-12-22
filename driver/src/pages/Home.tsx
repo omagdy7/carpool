@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button"
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card"
 import { auth, db } from "@/firebase/firebase_config"
 import { fetchUserDetails } from "@/utils/fetchUserDetails"
-import { DocumentData, collection, doc, getDoc, getDocs, query, where } from "firebase/firestore"
+import { Toaster } from "@/components/ui/toaster"
 import { useEffect, useState } from "react"
 import { Navigate } from "react-router-dom"
+import { fetchRideRequests } from "@/utils/fetchRideRequests"
 
 interface IDriver {
   uid: string,
@@ -21,6 +22,8 @@ interface IDriver {
 
 interface IPassengerRequest {
   passengerName: string,
+  phoneNumber: string,
+  status: string,
   pickUp: string,
   dropOff: string,
 }
@@ -30,11 +33,17 @@ interface ITrip {
   dropOff: string,
 }
 
-function PassengerRequestCard({ passengerName, pickUp, dropOff }: IPassengerRequest) {
+function PassengerRequestCard({ passengerName, pickUp, dropOff, status, phoneNumber }: IPassengerRequest) {
   return (
     <li className="py-2">
       <p>
         <strong>Passenger:</strong> {passengerName}
+      </p>
+      <p>
+        <strong>Phone number:</strong> {phoneNumber}
+      </p>
+      <p>
+        <strong>Status:</strong> {status}
       </p>
       <p>
         <strong>Pickup:</strong> {pickUp}
@@ -57,13 +66,18 @@ function PassengerRequestCard({ passengerName, pickUp, dropOff }: IPassengerRequ
 
 export default function Home() {
   const [driverData, setDriverData] = useState<IDriver | null | undefined>()
+  const [rideRequests, setRideRequests] = useState<any[] | undefined>([])
   const [currentTrip, setCurrentTrip] = useState<ITrip>()
 
-
   useEffect(() => {
+    const user = auth.currentUser;
     async function fetchData() {
-      const data: IDriver | null | undefined = await fetchUserDetails();
+      const data: IDriver | null | undefined = await fetchUserDetails(user?.uid);
+      const rideReqs = await fetchRideRequests()
+      console.log("RideRequests:", rideReqs)
       setDriverData(data)
+      setRideRequests(rideReqs)
+      console.log("Length: ", rideRequests?.length)
     }
     fetchData()
   }, [auth.currentUser, db]);
@@ -134,16 +148,34 @@ export default function Home() {
               </CardHeader>
               <CardContent className="mt-3">
                 <ul className="divide-y divide-gray-600">
-                  <PassengerRequestCard passengerName="Jane doe" pickUp="Gate 3/4" dropOff="5th Settelment" />
+                  {rideRequests?.map((rideReq) => {
+                    return (
+                      < PassengerRequestCard
+                        passengerName={rideReq?.name}
+                        pickUp={rideReq?.pickUp}
+                        dropOff={rideReq?.dropOff}
+                        phoneNumber={rideReq?.phoneNumber}
+                        status={rideReq?.status}
+                      />
+                    )
+                  })}
                 </ul>
               </CardContent>
             </Card>
           </section>
           <div className="flex justify-end items-center mt-6">
-            <RideDialog />
+            <RideDialog
+              name={driverData?.name}
+              model={driverData?.carModel}
+              brand={driverData?.carBrand}
+              plateNumber={driverData?.plateNumber}
+              phoneNumber={driverData?.phoneNumber}
+              color={driverData?.carColor}
+            />
           </div>
           <footer className="mt-auto">
           </footer>
+          <Toaster />
         </main>
       )
   )

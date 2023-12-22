@@ -1,6 +1,5 @@
-import { addDoc, collection, doc, getDoc } from "firebase/firestore"
+import { addDoc, collection } from "firebase/firestore"
 import { db } from "../firebase/firebase_config"
-import { auth } from "../firebase/firebase_config"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -14,6 +13,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
+import { useToast } from "./ui/use-toast"
+import { ToastAction } from "./ui/toast"
 
 interface RideOrder {
   driverName: string
@@ -28,15 +29,21 @@ interface RideOrder {
 }
 
 
-function RideDialog({ name, brand, model, color, plateNumber }: any) {
+function RideDialog({ name, brand, model, color, plateNumber, phoneNumber }: any) {
+  const { toast } = useToast()
 
-  const [status, _setStatus] = useState<string>('Pending')
+  const [status, _setStatus] = useState<string>('Unreserved')
   const [orderTime, _setOrderTime] = useState<Date>(new Date())
   const [pickUpLocation, setPickUpLocation] = useState<string>()
   const [dropOffLocation, setDropOffLocation] = useState<string>()
+  const [isRideAdded, setIsRideAdded] = useState(true)
+  const [cost, setCost] = useState('')
 
 
   const addRideOrderToFirestore = async () => {
+    if (isRideAdded) {
+      return;
+    }
     try {
       // Get a reference to the 'rideOrders' collection
       const rideOrdersCollection = collection(db, 'Rides');
@@ -44,22 +51,29 @@ function RideDialog({ name, brand, model, color, plateNumber }: any) {
       // Add a new document to the 'rideOrders' collection with the data from the RideOrder object
       const newRideOrderRef = await addDoc(rideOrdersCollection, {
         driverName: name,
+        phoneNumber: phoneNumber,
         carModel: model,
         carBrand: brand,
         carColor: color,
         plateNumber: plateNumber,
+        cost: parseInt(cost),
         status: status,
         orderTime: orderTime,
         fromLocation: pickUpLocation,
         toLocation: dropOffLocation,
       });
 
+      setIsRideAdded(true)
       console.log('Ride order added with ID:', newRideOrderRef.id);
       // 'newRideOrderRef.id' will give you the document ID of the added ride order
     } catch (error) {
       console.error('Error adding ride order:', error);
     }
   };
+
+  const cancelRide = () => {
+    setIsRideAdded(false)
+  }
 
   return (
     <div>
@@ -97,9 +111,33 @@ function RideDialog({ name, brand, model, color, plateNumber }: any) {
                 onChange={(e) => setPickUpLocation(e.target.value)}
               />
             </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="From location" className="text-right">
+                Cost
+              </Label>
+              <Input
+                id="From location"
+                defaultValue=""
+                className="col-span-3"
+                onChange={(e) => setCost(e.target.value)}
+              />
+            </div>
           </div>
           <DialogFooter>
-            <Button className="bg-green-500 text-black" type="submit" onClick={addRideOrderToFirestore}>Submit</Button>
+            <Button className="bg-green-500 text-black" type="submit" onClick={() => {
+              if (isRideAdded) {
+                console.log("Hello")
+                toast({
+                  title: "Cannot add another ride",
+                  description: "You already have a ride in place",
+                })
+              } else {
+                addRideOrderToFirestore
+                toast({
+                  description: "Ride was added successfully",
+                })
+              }
+            }}>Submit</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
