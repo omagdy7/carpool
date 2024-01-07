@@ -1,5 +1,5 @@
 import RideDialog from "@/components/RideDialog"
-import { Avatar } from "@/components/ui/avatar"
+// import { Avatar } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card"
@@ -112,6 +112,7 @@ export default function Home() {
     const doWork = async () => {
       if (toComplete) {
         let phoneNumber = ''
+        console.log(rideRequests)
         const newRideReqs = rideRequests.map((request) => {
           if (request.status === "Accepted") {
             phoneNumber = request.phoneNumber;
@@ -162,7 +163,7 @@ export default function Home() {
           <header className="flex justify-between items-center">
             <div className="flex items-center gap-4">
               <h1 className="text-3xl font-bold">Driver Dashboard</h1>
-              <Avatar alt="Driver Avatar" className="w-10 h-10" src="/placeholder.svg?height=40&width=40" />
+              {/* <Avatar alt="Driver Avatar" className="w-10 h-10" src="/placeholder.svg?height=40&width=40" /> */}
               <h2 className="text-xl font-bold">{driverData?.name}</h2>
               <Badge className="bg-white text-black" variant="secondary">
                 Active Driver

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { auth } from '../firebase/firebase_config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { Navigate, redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button"
 import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card"
-import { Navigate, redirect } from "react-router-dom";
 import { Badge } from "@/components/ui/badge"
 
 export default function LandingPage() {

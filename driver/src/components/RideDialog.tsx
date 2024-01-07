@@ -58,10 +58,6 @@ function RideDialog({ name, brand, model, color, plateNumber, phoneNumber }: any
     }
   };
 
-  const cancelRide = () => {
-    setIsRideAdded(false)
-  }
-
   return (
     <div>
       <Dialog>
